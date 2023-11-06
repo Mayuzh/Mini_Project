@@ -4,13 +4,31 @@ format: html
 editor: visual
 ---
 
-## Description
+## Statement of the Research Question & Analysis Objective:
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+### Research Question:
 
-## Analysis
+What are the main factors that contribute to the distribution of haunted locations throughout the United States? How many locations are there of each category in the following list:
 
-## Prediction
+-   tragic or historical events
+
+-   unexplained phenomena
+
+-   burial grounds and cemeteries
+
+-   legends and folklore
+
+-   psychical or paranormal research
+
+-   cultural and religious beliefs
+
+### Analysis Objective:
+
+Our primary objective is to analyze the dataset of haunted locations in the United States to understand the factors that lead to their designation as haunted. Specifically, we aim to:
+
+-   Analyze the descriptions within the dataset: We will examine the descriptions provided in the dataset to determine whether most haunted location are caused by certain events or by unexplained phenomena.
+
+-   Based on the descriptions, we can categorize each location into the groups mentioned in the Research Question section and ascertain the number of events attributed to each category.
 
 ## Description of the Data
 
