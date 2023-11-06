@@ -1,5 +1,5 @@
 library(dplyr)
-data <- read.csv("Mini_Project/data/haunted_places_data.csv")
+data <- read.csv("data/haunted_places_data.csv")
 
 # Create empty vectors to store selected entries
 tragic_events <- c()
@@ -34,7 +34,7 @@ library(dplyr)
 library(ggplot2)
 
 # Read the CSV file
-data <- read.csv("Mini_Project/data/haunted_places_data.csv")
+data <- read.csv("data/haunted_places_data.csv")
 
 # Create a data frame with the count of tragic events by state
 tragic_events_by_state <- data %>%
@@ -50,8 +50,7 @@ ggplot(tragic_events_by_state, aes(x = state, y = count)) +
        x = "State",
        y = "Count of Tragic Events") +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90), 
-        axis.text.x = element_text(hjust = 0.5))
+  theme(axis.text.x = element_text(angle = 90))
 
 
 
