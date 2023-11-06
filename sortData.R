@@ -1,5 +1,5 @@
 library(dplyr)
-data <- read.csv("Mini_Project/data/haunted_places_data.csv")
+data <- read.csv("data/haunted_places_data.csv")
 
 # Create empty vectors to store selected entries
 tragic_events <- c()
@@ -34,7 +34,7 @@ library(dplyr)
 library(ggplot2)
 
 # Read the CSV file
-data <- read.csv("Mini_Project/data/haunted_places_data.csv")
+data <- read.csv("data/haunted_places_data.csv")
 
 # Create a data frame with the count of events by state
 events_by_state <- data %>%
@@ -55,6 +55,7 @@ ggplot(events_by_state, aes(x = state, y = count, color = event_type, group = ev
        y = "Count of Events",
        color = "Event Type") +
   theme_minimal() +
+<<<<<<< HEAD:data/sortData.R
   theme(axis.text.x = element_text(angle = 90)) +
   scale_color_manual(values = c("Tragic Events" = "skyblue", "Paranormal Events" = "orange", "Unexplainable Events" = "green"))
 
@@ -88,6 +89,10 @@ ggplot(events_by_state, aes(x = state, y = count, color = event_type, group = ev
 #   theme_minimal() +
 #   theme(axis.text.x = element_text(angle = 90))
 # 
+=======
+  theme(axis.text.x = element_text(angle = 90))
+
+>>>>>>> f72b47f5b26d83415f6ca1e57b549294aec346d3:sortData.R
 
 
 
