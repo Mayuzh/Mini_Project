@@ -32,4 +32,8 @@ Our primary objective is to analyze the dataset of haunted locations in the Unit
 
 ## Description of the Data
 
+The most important variable from our dataset is the "description." We will reply on this variable to answer our research questions.
+
+Because description contains sentences that explaining why the location is considered haunted, we can use a search algorithm to identify specific keywords within these sentences. These keywords will help filter and sort out our data. For instance, if a sentence in the description contains words like "killed" or "death," then we can classify the location under the category of tragic or historical events.
+
 ## Exploratory Data Analysis
