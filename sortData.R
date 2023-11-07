@@ -113,7 +113,21 @@ ggplot(total_events, aes(x = event_type, y = total_count, fill = event_type)) +
   theme_minimal() +
   scale_fill_manual(values = c("Tragic Events" = "skyblue", "Paranormal Events" = "orange", "Unexplainable Events" = "green"))
 
+# Create a data frame with the count of haunted locations by state
+haunted_locations_by_state <- data %>%
+  group_by(state_abbrev) %>%
+  summarize(count = n())
 
+# Create a bar chart
+ggplot(haunted_locations_by_state, aes(x = state_abbrev, y = count, fill = state_abbrev)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = count), vjust = -0.5, size = 3) +  # Add labels on top of the bars
+  labs(title = "Number of Haunted Locations by State",
+       x = "State",
+       y = "Count of Haunted Locations") +
+  theme_minimal() + 
+  theme(axis.text.x = element_text(angle = 90, size = 7),
+        axis.text.y = element_text(size = 7))
 
 
 
