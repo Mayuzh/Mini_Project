@@ -6,6 +6,12 @@ editor: visual
 
 ## Introduction and Data
 
+In our exploration, we're looking into a bunch of spooky places all over the U.S. because October was here, and Halloween was on the 31st. Halloween is known for the idea that the dead might come back to visit. People get into the spirit by dressing up and going to scary events and mysterious places to celebrate. We are curious as to why these places from our dataset are considered haunted -- is it because of specific events or just mysterious stuff?
+
+Our chosen dataset lists 10,992 haunted places in the U.S. It features 10 distinct variables -- including city, county, description, precise location, state, state abbreviation, longitude, latitude, city longitude, and city latitude. The dataset was put together by Tim Renner using [The Shadowlands Haunted Places Index](https://theshadowlands.net/places/), which is a website that contains a list of haunted spots by country and state that people can add to.
+
+Our project explores all these haunted places and helps us look at things like where these places are and what makes them spooky.
+
 ## Methodology
 
 ## Results
