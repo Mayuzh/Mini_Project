@@ -1,3 +1,5 @@
+# sortData for MiniProject3
+
 tuesdata <- tidytuesdayR::tt_load('2023-10-10')
 data <- tuesdata$haunted_places
 #library(dplyr)
