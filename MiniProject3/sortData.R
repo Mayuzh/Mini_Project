@@ -23,13 +23,12 @@ for (i in 1:nrow(data)) {
 }
 
 # Print the values of column 1 for selected entries
-print("Tragic Events:")
-print(tragic_events)
-print("Paranormal Events:")
-print(paranormal)
-print("Unexplainable Events:")
-print(unexplainable_events)
-
+# print("Tragic Events:")
+# print(tragic_events)
+# print("Paranormal Events:")
+# print(paranormal)
+# print("Unexplainable Events:")
+# print(unexplainable_events)
 
 # Load required libraries
 library(dplyr)
@@ -65,12 +64,37 @@ ggsave(filename="images/US-events-by-states.png",
 
 # Create a data frame with the count of tragic events by state
 tragic_events_by_state <- data %>%
+  filter(grepl("commited suicide|death|died|drowned|killed|murdered|murder", tolower(description))) %>%
+  group_by(state_abbrev) %>%
+  summarize(count = n())
+
+# Create a bar chart
+tragicEventsByState <- ggplot(tragic_events_by_state, aes(x = state_abbrev, y = count, fill = state_abbrev)) +
+  geom_bar(stat = "identity", width = 0.7) +
+  geom_text(aes(label = count), vjust = -0.5, size = 3) +
+  geom_hline(yintercept = 0, color = "black", size = 0.5) +
+  geom_vline(xintercept = 0, color = "black", size = 0.5) +
+  labs(title = "Number of Tragic Events by State",
+       x = "State",
+       y = "Count of Tragic Events") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, size = 7),
+        axis.text.y = element_text(size = 7))
+
+ggsave(filename="images/US-tragic-events-by-states.png", 
+       plot = tragicEventsByState, 
+       width = 50, height = 15, 
+       dpi = 300,
+       units = "cm")
+
+# Create a data frame with the count of tragic events by state
+paranormal_events_by_state <- data %>%
   filter(grepl("haunted|ghost|apparition|apparitions|ghostly|supernatural|paranormal|spirit", tolower(description))) %>%
   group_by(state_abbrev) %>%
   summarize(count = n())
 
 # Create a bar chart
-paranormalEventsByState <- ggplot(tragic_events_by_state, aes(x = state_abbrev, y = count, fill = state_abbrev)) +
+paranormalEventsByState <- ggplot(paranormal_events_by_state, aes(x = state_abbrev, y = count, fill = state_abbrev)) +
   geom_bar(stat = "identity", width = 0.7) +
   geom_text(aes(label = count), vjust = -0.5, size = 3) +
   geom_hline(yintercept = 0, color = "black", size = 0.5) +
@@ -182,5 +206,3 @@ ggsave(filename="images/US-map-by-states.png",
        width = 50, height = 15, 
        dpi = 300,
        units = "cm")
-
-#mapByState
