@@ -151,10 +151,10 @@ mapByState <- plot_usmap(data = haunted_locations_by_state, values = "count", re
   labs(title = "Number of Haunted Places by State") +
   theme(panel.background = element_blank())
 
-ggsave(filename="US-map-by-states.png", 
+ggsave(filename="images/US-map-by-states.png", 
        plot = mapByState, 
        width = 50, height = 15, 
        dpi = 300,
        units = "cm")
 
-mapByState
+#mapByState
