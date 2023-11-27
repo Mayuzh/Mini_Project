@@ -12,6 +12,49 @@ Our chosen dataset lists 10,992 haunted places in the U.S. It features 10 distin
 
 Our project explores all these haunted places and helps us look at things like where these places are and what makes them spooky.
 
+#### Data Dictionary
+
+| Variables      | Description                                                                                     |
+|----------------|-------------------------------------------------------------------------------------------------|
+| city           | The city where the place is located.                                                            |
+| country        | The country where the place is located (always "United States")                                 |
+| description    | A text description of the place. The amount of detail in these descriptions is highly variable. |
+| location       | A title for the haunted place.                                                                  |
+| state          | The US state where the place is located.                                                        |
+| state_abbrev   | The two-letter abbreviation for the state.                                                      |
+| longitude      | Longitude of the place.                                                                         |
+| latitude       | Latitude of the place.                                                                          |
+| city_longitude | Longitude of the city center.                                                                   |
+| city_latitude  | Latitude of the city center.                                                                    |
+
+#### Data Explanation
+
+Below are three visuals that contribute to addressing our research question: What are the main factors that contribute to the distribution of haunted locations throughout the United States?" How many locations are there of each category in the following list:
+
+-   tragic or historical events
+
+-   unexplained phenomena
+
+-   burial grounds and cemeteries
+
+-   legends and folklore
+
+-   psychical or paranormal research
+
+-   cultural and religious beliefs
+
+Figure 1 presents a U.S. map plot that uses color gradients to depict states with the highest haunted place count in light blue gradually transitioning to states with fewer haunted places in dark blue. California is the lightest blue, making it the leading state with the highest number of haunted places, followed by Texas and Philadelphia.
+
+Figure 2 displays a bar graph illustrating the quanity of haunted places for each event type -- paranormal, tragic, unexplainable. In our dataset containing 10,992 haunted places the predominant source is unexplainable events comprising 4,092 occurences. Tragic events comes next, followed by paranormal events.
+
+Figure 3 exhibits a line graph depicting the count of haunted places by event type for each state. As we can see, California holds the highest count for all three event types, with Texas and Philadelphia following. However, Texas surpasses in haunted places for tragic and unexplainable events, wehreas Philadelphia takes the lead in paranormal events compared to Texas.
+
+![Figure 1. US Map of the Number of Haunted Places](images/US-map-by-state.png)
+
+![Figure 2. Total Count of Each Event Type](images/TotalCountofEvents.png)
+
+![Figure 3. Events By State](images/comparisonOfEventsByState.png)
+
 ## Methodology
 
 ## Results
