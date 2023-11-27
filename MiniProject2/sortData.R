@@ -1,5 +1,7 @@
-library(dplyr)
-data <- read.csv("data/haunted_places_data.csv")
+tuesdata <- tidytuesdayR::tt_load('2023-10-10')
+data <- tuesdata$haunted_places
+#library(dplyr)
+#data <- read.csv("data/haunted_places_data.csv")
 
 # Create empty vectors to store selected entries
 tragic_events <- c()

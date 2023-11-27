@@ -1,5 +1,7 @@
-library(dplyr)
-data <- read.csv("Mini_Project/data/haunted_places_data.csv")
+tuesdata <- tidytuesdayR::tt_load('2023-10-10')
+data <- tuesdata$haunted_places
+#library(dplyr)
+#data <- read.csv("data/haunted_places_data.csv")
 
 # Create empty vectors to store selected entries
 tragic_events <- c()
@@ -129,12 +131,13 @@ ggplot(haunted_locations_by_state, aes(x = state_abbrev, y = count, fill = state
   theme(axis.text.x = element_text(angle = 90, size = 7),
         axis.text.y = element_text(size = 7))
 
+# Content for Mini-Project III
 # Install and load required packages
 install.packages(c("usmap", "ggplot2"))
 library(usmap)
 library(ggplot2)
 
-data <- read.csv("Mini_Project/data/haunted_places_data.csv")
+#data <- read.csv("Mini_Project/data/haunted_places_data.csv")
 
 # Create a data frame with the count of haunted locations by state (replace with your actual data)
 haunted_locations_by_state <- data %>%
@@ -143,14 +146,15 @@ haunted_locations_by_state <- data %>%
 
 # Plot the U.S. map with the count of haunted places
 mapByState <- plot_usmap(data = haunted_locations_by_state, values = "count", regions = "states", 
-           labels=TRUE, label_format = "{state}: {count}", hoverinfo = "text", geom = "path", size = 0.5) +
+           labels=TRUE, size = 0.5) +
   scale_fill_continuous(name = "Number of Haunted Places", label = scales::comma) +
   labs(title = "Number of Haunted Places by State") +
   theme(panel.background = element_blank())
-
 
 ggsave(filename="US-map-by-states.png", 
        plot = mapByState, 
        width = 50, height = 15, 
        dpi = 300,
        units = "cm")
+
+mapByState
