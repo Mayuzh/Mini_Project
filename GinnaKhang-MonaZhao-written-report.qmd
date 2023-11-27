@@ -4,4 +4,10 @@ format: html
 editor: visual
 ---
 
-## 
+## Introduction and Data
+
+## Methodology
+
+## Results
+
+## Data and Other Files
