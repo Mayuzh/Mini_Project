@@ -62,7 +62,8 @@ ggsave(filename="images/US-events-by-states.png",
        plot = eventsByState, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
 
 # Create a data frame with the count of tragic events by state
 tragic_events_by_state <- data %>%
@@ -87,7 +88,8 @@ ggsave(filename="images/US-tragic-events-by-states.png",
        plot = tragicEventsByState, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
 
 # Create a data frame with the count of tragic events by state
 paranormal_events_by_state <- data %>%
@@ -112,7 +114,8 @@ ggsave(filename="images/US-paranormal-events-by-states.png",
        plot = paranormalEventsByState, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
 
 # Create a data frame with the count of unexplainable events by state
 unexplainable_events_by_state <- data %>%
@@ -137,7 +140,8 @@ ggsave(filename="images/US-unexplainable-events-by-states.png",
        plot = unexplainableEventsByState, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
 
 # Create a data frame with the total count of events by event type
 total_events <- events_by_state %>%
@@ -159,7 +163,8 @@ ggsave(filename="images/US-total-count-of-events.png",
        plot = totalCountofEvents, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
 
 # Create a data frame with the count of haunted locations by state
 haunted_locations_by_state <- data %>%
@@ -181,12 +186,17 @@ ggsave(filename="images/US-haunted-locations-by-state.png",
        plot = hauntedLocationsByState, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
+
+
+
 
 # Content for Mini-Project III
 # Install and load required packages
-install.packages(c("usmap", "ggplot2"))
+install.packages(c("usmap", "ggplot2", "ggrepel"))
 library(usmap)
+library(ggrepel)
 library(ggplot2)
 
 #data <- read.csv("Mini_Project/data/haunted_places_data.csv")
@@ -201,10 +211,41 @@ mapByState <- plot_usmap(data = haunted_locations_by_state, values = "count", re
            labels=TRUE, size = 0.5) +
   scale_fill_continuous(name = "Number of Haunted Places", label = scales::comma) +
   labs(title = "Number of Haunted Places by State") +
-  theme(panel.background = element_blank())
+  theme(panel.background = element_blank(), legend.position="right")
 
 ggsave(filename="images/US-map-by-states.png", 
        plot = mapByState, 
+       width = 20, height = 10, 
+       dpi = 300,
+       units = "cm",
+       bg = "white")
+
+# Create a data frame with the count of events by state and event type
+events_by_state_stack <- data %>%
+  mutate(event_type = case_when(
+    grepl("commited suicide|death|died|drowned|killed|murdered|murder", tolower(description)) ~ "Tragic Events",
+    grepl("haunted|ghost|apparition|apparitions|ghostly|supernatural|paranormal|spirit", tolower(description)) ~ "Paranormal Events",
+    TRUE ~ "Unexplainable Events"
+  )) %>%
+  group_by(state_abbrev, event_type) %>%
+  summarize(count = n())
+
+# Create a stacked barplot
+stackedBarplot <- ggplot(events_by_state_stack, aes(x = state_abbrev, y = count, fill = event_type)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = count),
+            position = position_stack(vjust = 0.5), size = 3) +
+  labs(title = "Count of Events by Type and State",
+       x = "State",
+       y = "Count of Events",
+       fill = "Event Type") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, size = 7),
+        axis.text.y = element_text(size = 7))
+
+ggsave(filename="images/US-stacked-barplot-events-by-states.png", 
+       plot = stackedBarplot, 
        width = 50, height = 15, 
        dpi = 300,
-       units = "cm")
+       units = "cm",
+       bg="white")
