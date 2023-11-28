@@ -182,7 +182,7 @@ hauntedLocationsByState <- ggplot(haunted_locations_by_state, aes(x = state_abbr
   theme(axis.text.x = element_text(angle = 90, size = 7),
         axis.text.y = element_text(size = 7))
 
-ggsave(filename="images/US-haunted-locations-by-state.png", 
+ggsave(filename="images/US-haunted-locations-by-states.png", 
        plot = hauntedLocationsByState, 
        width = 50, height = 15, 
        dpi = 300,
