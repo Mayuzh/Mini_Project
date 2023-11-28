@@ -15,7 +15,7 @@ Our project explores all these haunted places and helps us look at things like w
 #### Data Dictionary
 
 | Variables      | Description                                                                                     |
-|----------------|-------------------------------------------------------------------------------------------------|
+|---------------|---------------------------------------------------------|
 | city           | The city where the place is located.                                                            |
 | country        | The country where the place is located (always "United States")                                 |
 | description    | A text description of the place. The amount of detail in these descriptions is highly variable. |
@@ -43,18 +43,6 @@ Below are three visuals that contribute to addressing our research question: Wha
 
 -   cultural and religious beliefs
 
-Figure 1 presents a U.S. map plot that uses color gradients to depict states with the highest haunted place count in light blue gradually transitioning to states with fewer haunted places in dark blue. California is the lightest blue, making it the leading state with the highest number of haunted places, followed by Texas and Philadelphia.
-
-Figure 2 displays a bar graph illustrating the quanity of haunted places for each event type -- paranormal, tragic, unexplainable. In our dataset containing 10,992 haunted places the predominant source is unexplainable events comprising 4,092 occurences. Tragic events comes next, followed by paranormal events.
-
-Figure 3 exhibits a line graph depicting the count of haunted places by event type for each state. As we can see, California holds the highest count for all three event types, with Texas and Philadelphia following. However, Texas surpasses in haunted places for tragic and unexplainable events, wehreas Philadelphia takes the lead in paranormal events compared to Texas.
-
-![Figure 1. US Map of the Number of Haunted Places](images/US-map-by-state.png)
-
-![Figure 2. Total Count of Each Event Type](images/TotalCountofEvents.png)
-
-![Figure 3. Events By State](images/comparisonOfEventsByState.png)
-
 ## Methodology
 
 Our main goal is to look at a list of spooky places in the U.S. and figure out why they're considered haunted. Therefore, the most important variable from our dataset is the "description." We relied on this variable to answer our research questions.
@@ -67,8 +55,26 @@ we classified the location under the category of tragic events. If it contained 
 
 -   haunted, ghost, apparition, ghostly, supernatural, paranormal, spirit
 
-then we classified the location under the category of paranormal events. Anything else would be classified as unexplainable. One thing to note is that there can be an overlap between tragic and paranormal events, as a death or murder at a haunted location may also result in paranormal phenomena.
+then, we classified the location under the category of paranormal events. Anything else would be classified as unexplainable. One thing to note is that there can be an overlap between tragic and paranormal events, as a death or murder at a haunted location may also result in paranormal phenomena.
 
 ## Results
 
+In our exploration of 10,992 haunted places in the United States, the analysis of our dataset and the visual representations revealed the main factors contributing to the distribution of haunted locations. The U.S. map (Figure 1) highlighted California as the state with the highest number of haunted places followed by Texas and Philadelphia. This distribution could be attributed to a variety of historical, cultural, and geographical factors unique to each state. The bar graph (Figure 2) showcased that the predominant source of haunting across these locations is unexplainable events, with 4,092 occurrences, indicating a prevalent belief in mysterious and supernatural occurrences. Tragic events come next, followed by paranormal events, emphasizing the diversity in the reasons why places are considered haunted.
+
+The line graph (Figure 3) provided a state-specific breakdown of haunted places by event type, reaffirming California's dominance in all three categories. Texas and Philadelphia emerged as significant players, with Texas leading in haunted places associated with tragic and unexplainable events, while Philadelphia took the lead in paranormal events. If we take look at the state-wise statistics shown in Figure 4, we are able to see what makes up majority of the states haunted locations. For instance, in California, the majority of haunted places are attributed to unexplainable events (423 occurrences), followed by paranormal events (350 occurrences) and tragic events (297 occurrences).
+
+![Figure 1: U.S. Map Events By States](images/US-map-by-states-01.png){alt="Figure 1: U.S. Map Events By States"}
+
+![Figure 2: Total Count of Haunted Places for Each Event Type](images/US-total-count-of-events-01.png){alt="Figure 2: Total Count of Haunted Places for Each Event Type"}
+
+![Figure 3: Events By State](images/US-events-by-states.png){alt="Figure 3: Events By State"}
+
+![Figure 4: Stats on Total Events By States](images/US-stacked-barplot-events-by-states.png)
+
+The response to our research inquiry, "What are the primary factors influencing the distribution of haunted locations across the United States?" is evident in Figures 2 and 4. Figure 3 consolidates the occurrence of each event type per state, underscoring that unexplainable events stand out as the primary factor contributing to the haunting of most locations.
+
 ## Data and Other Files
+
+Project Github: <https://github.com/Mayuzh/Mini_Project>
+
+Dataset Retrieved From: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-10/readme.md>
